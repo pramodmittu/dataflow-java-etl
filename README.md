@@ -74,7 +74,7 @@ mvn exec:java \
    --tempLocation=gs://axp-dataflow-bucket/tmp \
    --inputFile=gs://axp-dataflow-bucket/input/data.txt \
    --outputTable=axp-lumi-444505:etl_dataset.stage_table \
-   --kmsKey=projects/axp-lumi-444505/locations/us-west1/keyRings/salary_encryption/cryptoKeys/salary_encryption_key"
+   --kmsKey=projects/axp-lumi-444505/locations/us-west1/keyRings/salary_encryption/cryptoKeys/salary_encryption_key" ( its a sample key, create your own)
 -------------------------
 
 **After completing these steps:**
