@@ -1,2 +1,13 @@
 target/
 *.jar
+# Maven
+target/
+dependency-reduced-pom.xml
+
+# Local data
+data.txt
+
+# IDE
+.idea/
+*.iml
+.DS_Store
