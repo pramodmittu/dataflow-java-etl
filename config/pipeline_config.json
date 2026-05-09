@@ -1,0 +1,41 @@
+{
+  "project_id": "axp-lumi-444505",
+  "region": "us-west1",
+  "zone": "us-west1-a",
+
+  "gcs": {
+    "bucket": "axp-dataflow-bucket",
+    "input_file": "gs://axp-dataflow-bucket/input/data.txt",
+    "staging": "gs://axp-dataflow-bucket/dataflow-staging",
+    "temp": "gs://axp-dataflow-bucket/tmp",
+    "spark_script": "gs://axp-dataflow-bucket/spark/bq_to_mysql.py"
+  },
+
+  "dataflow": {
+    "jar_path": "gs://axp-dataflow-bucket/jars/latest.jar",
+    "main_class": "com.example.etl.DataflowIngest",
+    "kms_key": "projects/axp-lumi-444505/locations/us-west1/keyRings/salary_encryption/cryptoKeys/salary_encryption_key"
+  },
+
+  "bigquery": {
+    "dataset": "etl_dataset",
+    "table_1": "stage_table",
+    "table_2": "stage_table_copy"
+  },
+
+  "dataproc": {
+    "cluster_name": "etl-spark-cluster",
+    "master_machine": "n1-standard-2",
+    "worker_machine": "n1-standard-2",
+    "num_workers": 2,
+    "image_version": "2.1-debian11"
+  },
+
+  "mysql": {
+    "host": "YOUR_MYSQL_HOST",
+    "port": 3306,
+    "database": "etl_db",
+    "table": "employees",
+    "user": "root"
+  }
+}
