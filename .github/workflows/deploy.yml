@@ -47,13 +47,13 @@ jobs:
         run: |
           JAR=$(ls target/*shaded* 2>/dev/null || ls target/*.jar | grep -v original | head -1)
           echo "Uploading: $JAR"
-          gsutil cp $JAR gs://axp-dataflow-bucket/jars/gcs-dataflow-etl-${{ github.sha }}.jar
-          gsutil cp $JAR gs://axp-dataflow-bucket/jars/latest.jar
+          gsutil cp $JAR gs://axp-dataflow-artifacts/jars/gcs-dataflow-etl-${{ github.sha }}.jar
+          gsutil cp $JAR gs://axp-dataflow-artifacts/jars/latest.jar
           echo "✅ JAR uploaded!"
-          gsutil ls -lh gs://axp-dataflow-bucket/jars/
+          gsutil ls -lh gs://axp-dataflow-artifacts/jars/
 
       - name: Upload Spark and config
         run: |
-          gsutil cp spark/bq_to_mysql.py gs://axp-dataflow-bucket/spark/bq_to_mysql.py
-          gsutil cp config/pipeline_config.json gs://axp-dataflow-bucket/config/pipeline_config.json
+          gsutil cp spark/bq_to_mysql.py gs://axp-dataflow-artifacts/spark/bq_to_mysql.py
+          gsutil cp config/pipeline_config.json gs://axp-dataflow-artifacts/config/pipeline_config.json
           echo "✅ Spark + config uploaded"

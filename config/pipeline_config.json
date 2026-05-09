@@ -4,15 +4,15 @@
   "zone": "us-west1-a",
 
   "gcs": {
-    "bucket": "axp-dataflow-bucket",
-    "input_file": "gs://axp-dataflow-bucket/input/data.txt",
-    "staging": "gs://axp-dataflow-bucket/dataflow-staging",
-    "temp": "gs://axp-dataflow-bucket/tmp",
-    "spark_script": "gs://axp-dataflow-bucket/spark/bq_to_mysql.py"
+    "bucket": "axp-dataflow-artifacts",
+    "input_file": "gs://axp-dataflow-artifacts/input/data.txt",
+    "staging": "gs://axp-dataflow-artifacts/dataflow-staging",
+    "temp": "gs://axp-dataflow-artifacts/tmp",
+    "spark_script": "gs://axp-dataflow-artifacts/spark/bq_to_mysql.py"
   },
 
   "dataflow": {
-    "jar_path": "gs://axp-dataflow-bucket/jars/latest.jar",
+    "jar_path": "gs://axp-dataflow-artifacts/jars/latest.jar",
     "main_class": "com.example.etl.DataflowIngest",
     "kms_key": "projects/axp-lumi-444505/locations/us-west1/keyRings/salary_encryption/cryptoKeys/salary_encryption_key"
   },
